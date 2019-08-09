@@ -6,7 +6,7 @@ class League
   attr_accessor :teams
 
   def initialize(options)
-    @id = options['id']
+    @id = options['id'].to_i if options['id']
     @name = options['name']
     @teams = []
   end

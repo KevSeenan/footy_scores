@@ -5,7 +5,7 @@ require_relative('../models/league.rb')
 class LeagueTest < MiniTest::Test
 
   def setup()
-    @league = League.new('Test Prem League')
+    @league = League.new("Test Prem League")
   end
 
   def test_can_create_a_league
