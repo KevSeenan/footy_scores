@@ -2,8 +2,8 @@ require_relative('../db/sql_runner.rb')
 
 class Team
 
-  attr_reader :id, :name
-  attr_accessor :league_id
+  attr_reader :id
+  attr_accessor :name, :league_id
 
   def initialize(options)
     @id = options[id].to_i if options['id']
@@ -41,6 +41,13 @@ class Team
     result = SqlRunner.run(sql, values)
     team = self.new(result.first)
     return team
+  end
+
+#UPDATE
+  def update()
+    sql = "UPDATE teams SET name = $1 WHERE id = $2"
+    values = [@name, @id]
+    SqlRunner.run(sql, values)
   end
 
 end
