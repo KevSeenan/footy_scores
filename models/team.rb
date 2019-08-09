@@ -29,9 +29,9 @@ class Team
 #READ
   def self.all()
     sql = "SELECT * FROM teams"
-    team_details = SqlRunner.run(sql)
-    teams = map_items(team_details)
-    return team
+    teams = SqlRunner.run(sql)
+    result = teams.map{|team| Team.new(team)}
+    return result
   end
-
+  
 end
