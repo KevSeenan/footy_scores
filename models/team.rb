@@ -11,12 +11,12 @@ class Team
     @league_id = options['league_id'].to_i()
   end
 
-  # def save()
-  #   sql = "INSERT INTO teams (name, league_id) VALUES ($1, $2) RETURNING id"
-  #   values = [@name, @league_id]
-  #   result = SqlRunner.run(sql, values)
-  #   id = result.first['id']
-  #   @id = id
-  # end
+  def save()
+    sql = "INSERT INTO teams (name, league_id) VALUES ($1, $2) RETURNING id"
+    values = [@name, @league_id]
+    result = SqlRunner.run(sql, values)
+    id = result.first['id']
+    @id = id
+  end
 
 end
