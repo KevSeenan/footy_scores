@@ -33,5 +33,14 @@ class Team
     result = teams.map{|team| Team.new(team)}
     return result
   end
-  
+
+#READ
+  def self.find(id)
+    sql = "SELECT * FROM teams WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values)
+    team = self.new(result.first)
+    return team
+  end
+
 end
