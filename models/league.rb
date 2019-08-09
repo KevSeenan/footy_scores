@@ -2,8 +2,8 @@ require_relative('../db/sql_runner.rb')
 
 class League
 
-  attr_reader :id, :name
-  attr_accessor :teams
+  attr_reader :id
+  attr_accessor :name, :teams
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -18,6 +18,13 @@ class League
     result = SqlRunner.run(sql, values)
     id = result.first["id"]
     @id = id.to_i()
+  end
+
+#UPDATE
+  def update()
+    sql = "UPDATE leagues SET name = $1 WHERE id = $2"
+    values = [@name, @id]
+    SqlRunner.run(sql, values)
   end
 
 #DELETE
@@ -45,10 +52,9 @@ class League
   end
 
 # DELETE
-
-def League.delete_all()
-  sql = "DELETE FROM leagues"
-  SqlRunner.run(sql)
-end
+  def League.delete_all()
+    sql = "DELETE FROM leagues"
+    SqlRunner.run(sql)
+  end
 
 end
