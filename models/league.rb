@@ -20,4 +20,12 @@ class League
     @id = id.to_i()
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM leagues WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values).first
+    league = League.new(result)
+    return league
+  end
+
 end
