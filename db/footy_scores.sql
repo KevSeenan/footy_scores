@@ -1,6 +1,7 @@
 DROP TABLE teams;
 DROP TABLE leagues;
 
+
 CREATE TABLE leagues (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255)
