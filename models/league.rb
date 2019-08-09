@@ -28,4 +28,11 @@ class League
     return league
   end
 
+  def self.all()
+    sql = "SELECT * FROM leagues"
+    league_details = SqlRunner.run(sql)
+    leagues = map_items(league_details)
+    return leagues
+  end
+
 end
