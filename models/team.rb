@@ -11,6 +11,7 @@ class Team
     @league_id = options['league_id'].to_i()
   end
 
+#CREATE
   def save()
     sql = "INSERT INTO teams (name, league_id) VALUES ($1, $2) RETURNING id"
     values = [@name, @league_id]
@@ -18,5 +19,11 @@ class Team
     id = result.first['id']
     @id = id
   end
+
+#DELETE
+def Team.delete_all()
+  sql = "DELETE FROM teams"
+  SqlRunner.run(sql)
+end
 
 end
