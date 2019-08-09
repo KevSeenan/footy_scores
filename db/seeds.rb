@@ -33,8 +33,8 @@ team2 = Team.new(
 )
 team2.save()
 
-team1.name = 'FC Rubber Ducks'
-team1.update()
+# team1.name = 'FC Rubber Ducks'
+# team1.update()
 
 
 binding.pry
