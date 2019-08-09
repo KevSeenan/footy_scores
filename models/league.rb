@@ -35,6 +35,7 @@ class League
     league = League.new(result)
     return league
   end
+
 #READ
   def self.all()
     sql = "SELECT * FROM leagues"
@@ -43,10 +44,11 @@ class League
     return leagues
   end
 
-#UPDATE
-  # def update()
-  #   sql = "UPDATE leagues SET (name) = ($1) WHERE id  = $2"
-  #   values = [@name]
-  # end
+# DELETE
+
+def League.delete_all()
+  sql = "DELETE FROM leagues"
+  SqlRunner.run(sql)
+end
 
 end
