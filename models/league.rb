@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner.rb')
+require_relative('./team.rb')
 
 class League
 
@@ -55,6 +56,6 @@ class League
     sql = "DELETE FROM leagues WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
-    end
+  end
 
 end

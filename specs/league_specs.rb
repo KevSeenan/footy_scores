@@ -8,7 +8,7 @@ class LeagueTest < MiniTest::Test
     @league = League.new("Test Prem League")
   end
 
-  def test_can_create_a_league
+  def test_can_create_a_league()
     assert_equal(League, @league.class())
   end
 

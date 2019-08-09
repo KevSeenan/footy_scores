@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner.rb')
+require_relative('./league.rb')
 
 class Team
 
@@ -41,6 +42,15 @@ class Team
     result = SqlRunner.run(sql, values)
     team = self.new(result.first)
     return team
+  end
+
+# Lists teams by league_id
+  def self.find(league_id)
+    sql = "SELECT * FROM teams WHERE league_id = $1"
+    values = [league_id]
+    teams = SqlRunner.run(sql, values)
+    result = teams.map{|team| Team.new(team)}
+    return result
   end
 
 #UPDATE
