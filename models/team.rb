@@ -21,9 +21,17 @@ class Team
   end
 
 #DELETE
-def Team.delete_all()
-  sql = "DELETE FROM teams"
-  SqlRunner.run(sql)
-end
+  def Team.delete_all()
+    sql = "DELETE FROM teams"
+    SqlRunner.run(sql)
+  end
+
+#READ
+  def self.all()
+    sql = "SELECT * FROM teams"
+    team_details = SqlRunner.run(sql)
+    teams = map_items(team_details)
+    return team
+  end
 
 end

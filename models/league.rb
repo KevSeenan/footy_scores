@@ -29,17 +29,17 @@ class League
 #READ
   def self.all()
     sql = "SELECT * FROM leagues"
-    league_details = SqlRunner.run(sql)
-    leagues = map_items(league_details)
-    return leagues
+    leagues = SqlRunner.run(sql)
+    result = leagues.map{|league| League.new(league)}
+    return result
   end
 
 #READ
   def self.find(id)
     sql = "SELECT * FROM leagues WHERE id = $1"
     values = [id]
-    result = SqlRunner.run(sql, values).first
-    league = League.new(result)
+    result = SqlRunner.run(sql, values)
+    league = self.new(result.first)
     return league
   end
 
