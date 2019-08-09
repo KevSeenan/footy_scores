@@ -1,5 +1,4 @@
-
-require_relative('../db/sql_runner')
+require_relative('../db/sql_runner.rb')
 
 class League
 
@@ -33,6 +32,11 @@ class League
     league_details = SqlRunner.run(sql)
     leagues = map_items(league_details)
     return leagues
+  end
+
+  def update()
+    sql = "UPDATE leagues SET (name) = ($1) WHERE id  = $2"
+    values = [@name]
   end
 
 end
