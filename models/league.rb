@@ -11,6 +11,7 @@ class League
     @teams = []
   end
 
+#CREATE
   def save()
     sql = "INSERT INTO leagues (name) VALUES ($1) RETURNING id"
     values = [@name]
@@ -19,6 +20,14 @@ class League
     @id = id.to_i()
   end
 
+#DELETE
+  def delete()
+    sql = "DELETE FROM leagues WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
+#READ
   def self.find(id)
     sql = "SELECT * FROM leagues WHERE id = $1"
     values = [id]
@@ -26,7 +35,7 @@ class League
     league = League.new(result)
     return league
   end
-
+#READ
   def self.all()
     sql = "SELECT * FROM leagues"
     league_details = SqlRunner.run(sql)
@@ -34,9 +43,10 @@ class League
     return leagues
   end
 
-  def update()
-    sql = "UPDATE leagues SET (name) = ($1) WHERE id  = $2"
-    values = [@name]
-  end
+#UPDATE
+  # def update()
+  #   sql = "UPDATE leagues SET (name) = ($1) WHERE id  = $2"
+  #   values = [@name]
+  # end
 
 end
