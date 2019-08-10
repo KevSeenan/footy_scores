@@ -1,3 +1,4 @@
+<!-- Dispalys all leaues added by user -->
 <h2>All Leagues:</h2>
 <hr />
 <% for league in @leagues %>
@@ -5,4 +6,6 @@
   <p><a href="/leagues/<%= league.id %>">Show League</a></p>
   <hr />
 <% end %>
+
+<!-- Adds link so cust can add a league to their list -->
 <p><a href="/leagues/new">Add League</a></p>
