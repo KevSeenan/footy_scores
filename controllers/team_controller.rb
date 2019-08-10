@@ -1,9 +1,24 @@
 require_relative("../models/team.rb")
+require_relative("../models/league.rb")
 
 #INDEX
 get "/teams" do
   @teams = Team.all()
   erb(:"teams/index")
+end
+
+# NEW
+get "/teams/new" do
+  @teams = Team.all()
+  erb(:"teams/new")
+end
+
+# CREATE
+post "/teams" do
+  team_hash = params
+  team = Team.new(team_hash)
+  team.save()
+  redirect "/teams"
 end
 
 #SHOW
