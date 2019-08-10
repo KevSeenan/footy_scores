@@ -7,7 +7,7 @@ class Team
   attr_accessor :name, :league_id
 
   def initialize(options)
-    @id = options[id].to_i if options['id']
+    @id = options['id'].to_i if options['id']
     @name = options['name']
     @league_id = options['league_id'].to_i()
   end
@@ -19,11 +19,6 @@ class Team
     result = SqlRunner.run(sql, values)
     id = result.first['id']
     @id = id
-  end
-
-  def league()
-    league = League.find(@league_id)
-    return league
   end
 
 #DELETE
@@ -38,6 +33,10 @@ class Team
     teams = SqlRunner.run(sql)
     result = teams.map{|team| Team.new(team)}
     return result
+  end
+
+  def self.map_items(team_data)
+    return team_data.map {|team| Tean.new(team)}
   end
 
 #READ

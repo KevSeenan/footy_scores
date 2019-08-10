@@ -62,4 +62,5 @@ class League
     return league_data.map { |league| League.new(league) }
   end
 
+
 end
