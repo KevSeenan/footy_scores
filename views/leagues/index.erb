@@ -1,8 +1,8 @@
-<h2>View Leagues:</h2>
+<h2>All Leagues:</h2>
 <hr />
 <% for league in @leagues %>
   <p> Name: <%= league.name()%> </p>
-  <p><a href="/leagues/<%= league.id() %>">Show League</a></p>
+  <p><a href="/leagues/<%= league.id %>">Show League</a></p>
   <hr />
 <% end %>
 <p><a href="/leagues/new">Add League</a></p>

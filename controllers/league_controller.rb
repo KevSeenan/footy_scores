@@ -20,3 +20,10 @@ post "/leagues" do
   league.save()
   redirect "/leagues"
 end
+
+#SHOW
+get "/leagues/:id" do
+  id = params[:id].to_i()
+  @league = League.find(id)
+  erb(:"leagues/show")
+end
