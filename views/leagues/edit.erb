@@ -1,1 +1,4 @@
-
+<form action="/leagues/<%=@league.id%>" method="POST">
+  <label for="league-name">League Name:</label>
+  <input type="text" id="league-name" name="name" value="<%= @league.name%>">
+</form>

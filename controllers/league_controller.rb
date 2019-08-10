@@ -35,3 +35,17 @@ get "/leagues/:id" do
   @league = League.find(id)
   erb(:"leagues/show")
 end
+
+#EDIT
+get "/leagues/:id/edit" do
+  id = params[:id].to_i()
+  @league = League.find(id)
+  erb(:"leagues/edit")
+end
+
+#UPDATE
+post '/leagues/:id' do
+  league = League.new(params)
+  league.update()
+  redirect '/leagues'
+end
