@@ -9,7 +9,7 @@ class League
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
-    @teams = []
+    @teams = options['team_id'].to_i()
   end
 
 #CREATE
@@ -56,6 +56,10 @@ class League
     sql = "DELETE FROM leagues WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
+  end
+
+  def self.map_items(league_data)
+    return league_data.map { |league| League.new(league) }
   end
 
 end

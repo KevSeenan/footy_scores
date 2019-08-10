@@ -21,6 +21,11 @@ class Team
     @id = id
   end
 
+  def league()
+    league = League.find(@league_id)
+    return league
+  end
+
 #DELETE
   def Team.delete_all()
     sql = "DELETE FROM teams"

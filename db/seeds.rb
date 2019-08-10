@@ -2,12 +2,14 @@ require('pry-byebug')
 require_relative('../models/team.rb')
 require_relative('../models/league.rb')
 
-League.delete_all()
 Team.delete_all()
+League.delete_all()
+
 
 league1 = League.new(
   {
-    'name' => 'Clarence Duckworth Invitational'
+    'name' => 'Clarence Duckworth Invitational',
+    'teams' => ['FC TDD']
   }
 )
 league1.save()
