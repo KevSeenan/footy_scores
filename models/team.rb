@@ -35,10 +35,6 @@ class Team
     return result
   end
 
-  def self.map_items(team_data)
-    return team_data.map {|team| Team.new(team)}
-  end
-
 #READ
   def self.find(id)
     sql = "SELECT * FROM teams WHERE id = $1"
@@ -49,7 +45,7 @@ class Team
   end
 
 # Lists teams by league_id
-  def self.find(league_id)
+  def self.find_league(league_id)
     sql = "SELECT * FROM teams WHERE league_id = $1"
     values = [league_id]
     teams = SqlRunner.run(sql, values)
@@ -69,6 +65,10 @@ class Team
     sql = "DELETE FROM teams WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
+  end
+
+  def self.map_items(team_data)
+    return team_data.map {|team| Team.new(team)}
   end
 
 end
