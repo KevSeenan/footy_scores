@@ -36,7 +36,7 @@ class Team
   end
 
   def self.map_items(team_data)
-    return team_data.map {|team| Tean.new(team)}
+    return team_data.map {|team| Team.new(team)}
   end
 
 #READ

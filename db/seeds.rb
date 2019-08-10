@@ -9,7 +9,7 @@ League.delete_all()
 league1 = League.new(
   {
     'name' => 'Clarence Duckworth Invitational',
-    'teams' => ['FC TDD']
+    # 'teams' => ['FC TDD']
   }
 )
 league1.save()
