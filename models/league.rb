@@ -62,5 +62,12 @@ class League
     return league_data.map { |league| League.new(league) }
   end
 
+  def teams()
+    sql = "SELECT * from teams WHERE team_id = $1"
+    values = [@id]
+    teams = SqlRunner.run(sql, values)
+    return teams.map{|team| Team.new(team)}
+  end
+
 
 end

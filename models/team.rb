@@ -53,6 +53,11 @@ class Team
     return result
   end
 
+  def league()
+    league = League.find(@id)
+    return league
+  end
+
 #UPDATE
   def update()
     sql = "UPDATE teams SET name = $1 WHERE id = $2"
