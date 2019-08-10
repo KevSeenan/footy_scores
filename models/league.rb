@@ -44,6 +44,11 @@ class League
     return league
   end
 
+  def team()
+    team = Team.find(@id)
+    return team
+  end
+
 #UPDATE
   def update()
     sql = "UPDATE leagues SET name = $1 WHERE id = $2"
@@ -63,7 +68,7 @@ class League
   end
 
   def teams()
-    sql = "SELECT * from teams WHERE team_id = $1"
+    sql = "SELECT * from teams WHERE id = $1"
     values = [@id]
     teams = SqlRunner.run(sql, values)
     return teams.map{|team| Team.new(team)}

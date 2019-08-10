@@ -2,6 +2,9 @@
 <hr />
   <p> Name: <%= @league.name() %> </p>
   <p> Teams:   </p>
+  <% for team in @league.teams() %>
+    <p> <%= team.league.name() %> </p>
+  <% end %>
 <hr />
 
 <!-- Deletes league from list -->
