@@ -21,6 +21,14 @@ post "/teams" do
   redirect "/teams"
 end
 
+#DELETE
+post "/teams/:id/delete" do
+  id = params[:id].to_i()
+  team = Team.find(id)
+  team.delete()
+  redirect "/teams"
+end
+
 #SHOW
 get "/teams/:id" do
   id = params[:id].to_i()
