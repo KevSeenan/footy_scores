@@ -3,7 +3,9 @@
   <p> Name: <%= @league.name() %> </p>
   <p> Teams:   </p>
   <% for team in @league.teams() %>
-    <%= team.name() %>
+    <ul>
+      <li><%= team.name() %></li>
+    </ul>
   <% end %>
 <hr />
 
