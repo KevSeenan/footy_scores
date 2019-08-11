@@ -9,7 +9,7 @@ class League
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
-    @teams = options['team_id'].to_i()
+    @teams = options['teams']
   end
 
 #CREATE
@@ -69,7 +69,7 @@ class League
 
 # List all teams in a league
   def teams()
-    sql = "SELECT * from teams WHERE id = $1"
+    sql = "SELECT * FROM teams WHERE league_id = $1"
     values = [@id]
     teams = SqlRunner.run(sql, values)
     return teams.map{|team| Team.new(team)}
