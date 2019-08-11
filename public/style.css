@@ -1,0 +1,31 @@
+.title {
+  text-align: center;
+  text-decoration: underline;
+  font-family: monospace;
+}
+
+.home {
+  text-align: center;
+  display: flex: center;
+}
+
+.nav {
+
+}
+
+.nav_ul {
+  list-style: none;
+}
+
+.nav_li {
+  display: inline-table;
+  font-size: 20px;
+}
+
+a, p, li, h2, form, input {
+  font-family: monospace;
+}
+
+p, h3 {
+  font-size: 18px;
+}
