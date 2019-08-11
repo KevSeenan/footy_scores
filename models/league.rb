@@ -67,6 +67,7 @@ class League
     return league_data.map { |league| League.new(league) }
   end
 
+# List all teams in a league
   def teams()
     sql = "SELECT * from teams WHERE id = $1"
     values = [@id]
