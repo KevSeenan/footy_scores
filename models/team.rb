@@ -77,7 +77,7 @@ class Team
   end
 
   def leagues()
-    sql = "SELECT * from leagues WHERE id = $1"
+    sql = "SELECT * from leagues WHERE league_id = $1"
     values = [@id]
     leagues = SqlRunner.run(sql, values)
     return leagues.map{|league| League.new(league)}
