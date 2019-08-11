@@ -18,7 +18,7 @@ class Team
     values = [@name, @league_id]
     result = SqlRunner.run(sql, values)
     id = result.first['id']
-    @id = id
+    @id = id.to_i()
   end
 
 #DELETE
@@ -77,7 +77,7 @@ class Team
   end
 
   def leagues()
-    sql = "SELECT * from leagues WHERE league_id = $1"
+    sql = "SELECT * FROM leagues WHERE league_id = $1"
     values = [@id]
     leagues = SqlRunner.run(sql, values)
     return leagues.map{|league| League.new(league)}

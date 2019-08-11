@@ -9,7 +9,7 @@ class League
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
-    @teams = options['teams']
+    @team_id = options['team_id'].to_i()
   end
 
 #CREATE
