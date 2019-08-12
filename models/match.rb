@@ -1,6 +1,5 @@
-require_relative("../models/team.rb")
-require_relative("../models/league.rb")
-
+require_relative('../db/sql_runner.rb')
+require_relative('./team.rb')
 
 class Match
 
@@ -26,6 +25,14 @@ class Match
   def self.delete_all()
     sql = "DELETE FROM matches"
     SqlRunner.run(sql)
+  end
+
+#READ
+  def self.all()
+    sql = "SELECT * FROM matches"
+    matches = SqlRunner.run(sql)
+    result = matches.map{|match| Match.new(match)}
+    return result
   end
 
 end

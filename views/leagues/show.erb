@@ -1,7 +1,7 @@
 <h3>League Details</h3>
 <hr />
   <p> League Name: <%= @league.name() %> </p>
-  <p> Teams:   </p>
+  <h3> Teams:   </h3>
   <% for team in @league.teams() %>
     <ul>
       <li><%= team.name() %></li>

@@ -55,6 +55,7 @@ match2 = Match.new (
     'score' => '1-3'
   }
 )
+match2.save()
 
 
 binding.pry
