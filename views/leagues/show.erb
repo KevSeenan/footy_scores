@@ -1,6 +1,6 @@
-<h3>League Details:</h3>
+<h3>League Details</h3>
 <hr />
-  <p> Name: <%= @league.name() %> </p>
+  <p> League Name: <%= @league.name() %> </p>
   <p> Teams:   </p>
   <% for team in @league.teams() %>
     <ul>
@@ -9,11 +9,12 @@
   <% end %>
 <hr />
 
+
+
 <!-- Deletes league from list -->
 <form action="/leagues/<%= @league.id %>/delete" method="POST">
   <input type="submit" value="Delete League">
 </form>
-
 
 <!-- Edits league -->
 <a href="/leagues/<%= @league.id %>/edit">Edit League</a>

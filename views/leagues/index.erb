@@ -2,7 +2,7 @@
 <h2>My Leagues:</h2>
 <hr />
 <% for league in @leagues %>
-  <p> Name: <%= league.name()%> </p>
+  <p> League Name: <%= league.name()%> </p>
   <p><a href="/leagues/<%= league.id %>">Show League</a></p>
   <hr />
 <% end %>

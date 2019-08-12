@@ -1,4 +1,6 @@
 require('pry-byebug')
+require_relative('../models/match.rb')
+require_relative('../models/fixture.rb')
 require_relative('../models/team.rb')
 require_relative('../models/league.rb')
 
@@ -37,6 +39,21 @@ team2.save()
 
 # team1.name = 'FC Rubber Ducks'
 # team1.update()
+
+match1 = Match.new (
+  {
+    'name' => 'Match Day 1',
+    'score' => '2-0'
+  }
+)
+match1.save()
+
+match2 = Match.new (
+  {
+    'name' => 'Match Day 2',
+    'score' => '1-3'
+  }
+)
 
 
 binding.pry

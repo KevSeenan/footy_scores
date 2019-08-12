@@ -2,8 +2,9 @@
 <h2>My Teams:</h2>
 <hr />
 <% for team in @teams %>
-  <p> Name: <%= team.name()%> </p>
+  <p> Team Name: <%= team.name()%> </p>
   <p><a href="/teams/<%= team.id %>">Show Team</a></p>
+
   <hr />
 <% end %>
 

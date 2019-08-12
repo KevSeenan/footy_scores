@@ -1,8 +1,8 @@
 body {
-  /* background-image: url('./images/pitch2.jpg'); */
+  background-image: url('./images/pitch2.jpg');
   background-repeat: no-repeat;
   background-size: 100%;
-  /* color: white; */
+  color: white;
 }
 
 .title {
@@ -13,33 +13,47 @@ body {
 }
 
 .home {
-  border-style: ridge;
   display: flex;
   justify-content: center;
   text-align: center;
-  /* color: white; */
-  flex: 1;
+  color: white;
 }
 
 .nav {
- /* color: white; */
+ color: white;
 }
 
 .nav_ul {
   list-style: none;
-  /* colour: white; */
+  colour: white;
 }
 
 .nav_li {
-  display: inline-table;
+  display: inline-grid;
   font-size: 20px;
-  /* color: white; */
+  color: white;
+  padding-left: 80px;
+
 }
 
 a, p, li, h2, h3, form, input {
   font-family: monospace;
 }
 
-p, li, h3 {
+a, p, li, h3, input {
   font-size: 18px;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+}
+
+h2, h3 {
+  text-align: center;
+  text-decoration: underline;
+}
+
+a, a:visited {
+  color: white;
 }
