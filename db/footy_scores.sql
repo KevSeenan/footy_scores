@@ -26,5 +26,6 @@ CREATE TABLE fixtures (
   league_id INT REFERENCES leagues(id),
   home_team VARCHAR(255),
   away_team VARCHAR(255),
-  match_id INT
+  match_id INT REFERENCES matches(id),
+  match_name VARCHAR(255)
 );

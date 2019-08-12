@@ -61,6 +61,7 @@ fixture1 = Fixture.new (
   {
     'league_id' => league1.id,
     'match_id'=> match1.id,
+    'match_name' => match1.name,
     'home_team' => team1.name,
     'away_team' => team2.name
   }
@@ -70,7 +71,8 @@ fixture1.save()
 fixture2 = Fixture.new (
   {
     'league_id' => league1.id,
-    'match_id'=> match1.id,
+    'match_id'=> match2.id,
+    'match_name' => match2.name,
     'home_team' => team2.name,
     'away_team' => team1.name
   }
