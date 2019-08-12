@@ -57,6 +57,26 @@ match2 = Match.new (
 )
 match2.save()
 
+fixture1 = Fixture.new (
+  {
+    'league_id' => league1.id,
+    'match_id'=> match1.id,
+    'home_team' => team1.name,
+    'away_team' => team2.name
+  }
+)
+fixture1.save()
+
+fixture2 = Fixture.new (
+  {
+    'league_id' => league1.id,
+    'match_id'=> match1.id,
+    'home_team' => team2.name,
+    'away_team' => team1.name
+  }
+)
+fixture2.save()
+
 
 binding.pry
 
