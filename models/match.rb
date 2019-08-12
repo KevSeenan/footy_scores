@@ -22,4 +22,10 @@ class Match
     @id = id.to_i()
   end
 
+#DELETE
+  def self.delete_all()
+    sql = "DELETE FROM matches"
+    SqlRunner.run(sql)
+  end
+
 end

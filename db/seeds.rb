@@ -4,6 +4,7 @@ require_relative('../models/fixture.rb')
 require_relative('../models/team.rb')
 require_relative('../models/league.rb')
 
+Match.delete_all()
 Team.delete_all()
 League.delete_all()
 
