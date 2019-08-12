@@ -26,4 +26,27 @@ class Fixture
     @id = id.to_i()
   end
 
+#DELETE
+  def Fixture.delete_all()
+    sql = "DELETE FROM fixtures"
+    SqlRunner.run(sql)
+  end
+
+#READ
+  def self.all()
+    sql = "SELECT * FROM fixtures"
+    fixtures = SqlRunner.run(sql)
+    result = fixtures.map{|fixture| Fixture.new(fixture)}
+    return result
+  end
+
+#READ
+    def self.find(id)
+      sql = "SELECT * FROM fixtures WHERE id = $1"
+      values = [id]
+      result = SqlRunner.run(sql, values)
+      fixture = self.new(result.first)
+      return fixture
+    end
+
 end
