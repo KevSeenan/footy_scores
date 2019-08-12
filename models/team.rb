@@ -54,7 +54,7 @@ class Team
   end
 
   def league()
-    league = League.find(@id)
+    league = League.find(@league_id)
     return league
   end
 
@@ -74,13 +74,6 @@ class Team
 
   def self.map_items(team_data)
     return team_data.map {|team| Team.new(team)}
-  end
-
-  def leagues()
-    sql = "SELECT * FROM leagues WHERE league_id = $1"
-    values = [@id]
-    leagues = SqlRunner.run(sql, values)
-    return leagues.map{|league| League.new(league)}
   end
 
 end

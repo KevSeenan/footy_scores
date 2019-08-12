@@ -1,31 +1,45 @@
+body {
+  /* background-image: url('./images/pitch2.jpg'); */
+  background-repeat: no-repeat;
+  background-size: 100%;
+  /* color: white; */
+}
+
 .title {
   text-align: center;
   text-decoration: underline;
   font-family: monospace;
+  font-size: 50px;
 }
 
 .home {
+  border-style: ridge;
+  display: flex;
+  justify-content: center;
   text-align: center;
-  display: flex: center;
+  /* color: white; */
+  flex: 1;
 }
 
 .nav {
-
+ /* color: white; */
 }
 
 .nav_ul {
   list-style: none;
+  /* colour: white; */
 }
 
 .nav_li {
   display: inline-table;
   font-size: 20px;
+  /* color: white; */
 }
 
-a, p, li, h2, form, input {
+a, p, li, h2, h3, form, input {
   font-family: monospace;
 }
 
-p, h3 {
+p, li, h3 {
   font-size: 18px;
 }
