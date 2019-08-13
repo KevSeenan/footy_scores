@@ -1,15 +1,17 @@
 require_relative('../db/sql_runner.rb')
 require_relative('./league.rb')
+require_relative('./match.rb')
 
 class Team
 
   attr_reader :id
-  attr_accessor :name, :league_id
+  attr_accessor :name, :league_id, :team_points
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
     @league_id = options['league_id'].to_i()
+    @match_id = options['match_id'].to_i()
   end
 
 #CREATE
