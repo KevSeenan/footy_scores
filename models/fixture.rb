@@ -7,29 +7,30 @@ require_relative("../models/match.rb")
 class Fixture
 
   attr_reader :id
-  attr_accessor :league_name, :home_team, :away_team, :match_id
+  attr_accessor :league_name, :home_team, :away_team
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @league_name = options['league_name']
     @home_team = options['home_team']
     @away_team = options['away_team']
-    @match_id = options['match_id'].to_i()
+    # @match_id = options['match_id'].to_i()
   end
 
 #CREATE
   def save()
-    sql = "INSERT INTO fixtures (league_name, home_team, away_team, match_id)
-            VALUES ($1, $2, $3, $4) RETURNING id"
-    values = [@league_name, @home_team, @away_team, @match_id]
+    sql = "INSERT INTO fixtures (league_name, home_team, away_team)
+            VALUES ($1, $2, $3) RETURNING id"
+    values = [@league_name, @home_team, @away_team]
     result = SqlRunner.run(sql, values)
     id = result.first["id"]
     @id = id.to_i()
   end
 
   def matches()
-    sql = "SELECT matches.* FROM matches INNER JOIN fixtures ON matches.id = fixtures.match_id WHERE matches.id = $1;"
-    values = [@match_id]
+    # sql = "SELECT matches.* FROM matches INNER JOIN fixtures ON matches.id = fixtures.match_id WHERE matches.id = $1;"
+    sql = "SELECT * FROM matches WHERE fixture_id = $1"
+    values = [@id]
     results = SqlRunner.run(sql, values)
     return results.map {|match| Match.new(match)}
   end

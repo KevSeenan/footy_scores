@@ -19,8 +19,7 @@ CREATE TABLE fixtures (
   id SERIAL PRIMARY KEY,
   league_name VARCHAR(255),
   home_team VARCHAR(255),
-  away_team VARCHAR(255),
-  match_id INT
+  away_team VARCHAR(255)
 );
 
 CREATE TABLE matches (
