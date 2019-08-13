@@ -24,6 +24,7 @@ CREATE TABLE matches (
 CREATE TABLE fixtures (
   id SERIAL PRIMARY KEY,
   league_id INT REFERENCES leagues(id),
+  league_name VARCHAR(255),
   home_team VARCHAR(255),
   away_team VARCHAR(255),
   match_id INT REFERENCES matches(id),

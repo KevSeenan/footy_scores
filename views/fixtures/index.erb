@@ -1,9 +1,18 @@
 <h2>Fixtures</h2>
 <hr />
+
 <% for fixture in @fixtures %>
-    <p> League:<%= fixture.league_id() %> </p>
-    <p> Match:<%= fixture.match_id() %> </p>
-    <p> <%= fixture.home_team() %> V <%= fixture.away_team() %> </p>
-    <p> Score: </p>
-<hr />
+  <p> <%= fixture.league_name() %> </p>
+
+    <% for match in fixture.matches() %>
+      <p> <%= match.name() %> </p>
+    <% end %>
+
+  <p> <%= fixture.home_team() %> V <%= fixture.away_team() %> </p>
+
+    <% for match in fixture.matches() %>
+      <p> <%= match.score() %> </p>
+    <% end %>
+
+  <hr />
 <% end %>

@@ -1,5 +1,6 @@
 require_relative('../db/sql_runner.rb')
 require_relative('./team.rb')
+require_relative('./fixture.rb')
 
 class Match
 
