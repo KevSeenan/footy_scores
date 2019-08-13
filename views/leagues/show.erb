@@ -9,6 +9,42 @@
   <% end %>
 <hr />
 
+<!--
+for game played
+update P, W or L, GF, GA
+if win = true, update points by 3
+
+if points > team above, move team up table
+-->
+
+<h3>League Table:</h3>
+<table class="table">
+  <tr>
+    <th>Team</th>
+    <th>P</th>
+    <th>W</th>
+    <th>L</th>
+    <th>GF</th>
+    <th>GA</th>
+    <th>Points</th>
+  </tr>
+  <td>
+    <% for team in @league.teams() %>
+    <%= team.name() %><br>
+    <% end %>
+  </td>
+</table>
+
+<ul>Key:
+<li>P - Games Played</li>
+<li>W - Games Won</li>
+<li>L - Games Lost</li>
+<li>GF - Goals For</li>
+<li>GA - Goals Against</li>
+<li>Points - Total Points</li>
+</ul>
+<hr />
+
 
 
 <!-- Deletes league from list -->
@@ -17,4 +53,6 @@
 </form>
 
 <!-- Edits league -->
-<a href="/leagues/<%= @league.id %>/edit">Edit League</a>
+<form action="/leagues/<%= @league.id %>/edit" method="GET">
+  <input type="submit" value="Edit League">
+</form>

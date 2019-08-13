@@ -3,10 +3,13 @@
 <hr />
 <% for team in @teams %>
   <p> Team Name: <%= team.name()%> </p>
-  <p><a href="/teams/<%= team.id %>">Show Team</a></p>
-
+  <form action="/teams/<%= team.id %>" method="GET">
+    <input type="submit" value="Show Team">
+  </form>
   <hr />
 <% end %>
 
 <!-- Adds link so cust can add a team to their list -->
-<p><a href="/teams/new">Add Team</a></p>
+<form action="/teams/new" method="GET">
+  <input type="submit" value="Add Team">
+</form>

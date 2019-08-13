@@ -32,19 +32,25 @@ body {
   display: inline-grid;
   font-size: 20px;
   color: white;
-  padding-left: 80px;
-  border-radius: 3px
-  border: 1px solid white;
+  padding-left: 106px;
+  /* border-radius: 3px
+  border: 1px solid white; */
 
 }
 
-a, p, li, h2, h3, form, input {
+.table, th, td {
+  border: 1px solid white;
+  font-family: monospace;
+  font-size: 18px;
+}
+
+a, p, ul, li, h2, h3, form, input, label {
   font-family: monospace;
 }
 
-a, p, li, h3, input {
+a, p, ul, li, h3, input, form {
   font-size: 18px;
-  text-align: center;
+  /* text-align: center; */
 }
 
 ul {
@@ -52,13 +58,13 @@ ul {
 }
 
 h2, h3 {
-  text-align: center;
+  /* text-align: center; */
   text-decoration: underline;
 }
 
 a, a:visited {
   color: white;
-  border-color: white;
-  border-style: solid;
-  text-decoration: none;
+  /* border-color: white;
+  border-style: solid; */
+  text-decoration: underline;
 }

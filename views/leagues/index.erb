@@ -3,9 +3,14 @@
 <hr />
 <% for league in @leagues %>
   <p> League Name: <%= league.name()%> </p>
-  <p><a href="/leagues/<%= league.id %>">Show League</a></p>
+  <form action="/leagues/<%= league.id %>" method="GET">
+    <input type="submit" value="Show League">
+  </form>
   <hr />
 <% end %>
 
 <!-- Adds link so cust can add a league to their list -->
-<p><a href="/leagues/new">Add League</a></p>
+<form action="/leagues/new" method="GET">
+  <input type="submit" value="Add League">
+</form>
+<!-- <p><a href="/leagues/new">Add League</a></p> -->
