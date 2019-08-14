@@ -1,5 +1,7 @@
 body {
   background-image: url('./images/pitch2.jpg');
+  /* pitch image taken from https://unsplash.com/photos/D9uYteS4YCY
+  pitch2 image taken from stock image site https://unsplash.com/photos/PAe2UhGo-S4 */
   background-repeat: no-repeat;
   background-size: 100%;
   color: white;
@@ -10,6 +12,7 @@ body {
   text-decoration: underline;
   font-family: monospace;
   font-size: 50px;
+
 }
 
 .home {
@@ -29,13 +32,10 @@ body {
 }
 
 .nav_li {
-  display: inline-grid;
+  display: inline-flex;
   font-size: 20px;
   color: white;
-  padding-left: 106px;
-  /* border-radius: 3px
-  border: 1px solid white; */
-
+  padding-left: 107px;
 }
 
 .table, th, td {
@@ -57,14 +57,20 @@ ul {
   list-style: none;
 }
 
+h1, img {
+  image: no-repeat;
+}
+
 h2, h3 {
   /* text-align: center; */
   text-decoration: underline;
 }
 
+h2 {
+  padding-top: 10px;
+}
+
 a, a:visited {
   color: white;
-  /* border-color: white;
-  border-style: solid; */
   text-decoration: underline;
 }

@@ -1,16 +1,10 @@
 <h2>Matches</h2>
 <hr />
 <% for match in @matches %>
-    <p> <%= match.name() %> </p>
-    <p> Team: <%= match.team1_id() %> </p>
-    <p> Score: <%= match.score %>
-      
-<h2>How team is doing:</h2>
-    <p> P: <%= match.games_played %> </p>
-    <p> W: <%= match.games_won %> </p>
-    <p> L: <%= match.games_lost %> </p>
-    <p> GF: <%= match.goals_for %> </p>
-    <p> GA: <%= match.goals_against %> </p>
-    <p> Points: <%= match.points %> </p>
-  <hr />
+  <p> <%= match.name() %> </p>
+
+    <% for fixture in match.fixtures() %>
+    <p> Team: <%= fixture.home_team() %> V <%= fixture.away_team() %> </p>
+    <% end %>
+    <hr />
 <% end %>

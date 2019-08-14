@@ -14,7 +14,6 @@ class Fixture
     @league_name = options['league_name']
     @home_team = options['home_team']
     @away_team = options['away_team']
-    # @match_id = options['match_id'].to_i()
   end
 
 #CREATE
@@ -28,7 +27,6 @@ class Fixture
   end
 
   def matches()
-    # sql = "SELECT matches.* FROM matches INNER JOIN fixtures ON matches.id = fixtures.match_id WHERE matches.id = $1;"
     sql = "SELECT * FROM matches WHERE fixture_id = $1"
     values = [@id]
     results = SqlRunner.run(sql, values)

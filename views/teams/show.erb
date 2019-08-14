@@ -2,6 +2,16 @@
 <hr />
   <p> Name: <%= @team.name() %> </p>
   <p> League: <%= @team.league.name() %> </p>
+  <p> Team Stats: </p>
+
+    <% for match in @team.matches() %>
+        <p> P: <%= match.games_played %> </p>
+        <p> W: <%= match.games_won %> </p>
+        <p> L: <%= match.games_lost %> </p>
+        <p> GF: <%= match.goals_for %> </p>
+        <p> GA: <%= match.goals_against %> </p>
+        <p> Points: <%= match.points %> </p>
+    <% end %>
 <hr />
 
 <!-- Deletes team from list -->

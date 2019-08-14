@@ -34,15 +34,6 @@ class Match
     @id = id.to_i()
   end
 
-  def fixtures()
-    sql = "SELECT fixtures.* FROM fixtures INNER JOIN matches ON fixtures.id = matches.fixture_id WHERE fixtures.id = $1;"
-    values = [@mfixture_id]
-    results = SqlRunner.run(sql, values)
-    return results.map {|fixture| Fixture.new(fixture)}
-  end
-
-
-
 #DELETE
   def self.delete_all()
     sql = "DELETE FROM matches"
@@ -69,7 +60,11 @@ class Match
     return teams.map{|team| Team.new(team)}
   end
 
-  # if a game is played add 1 to games played
-
+  def fixtures()
+    sql = "SELECT * FROM fixtures where id = $1"
+    values = [@id]
+    fixtures = SqlRunner.run(sql, values)
+    return fixtures.map{|fixture| Fixture.new(fixture)}
+  end
 
 end

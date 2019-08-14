@@ -78,4 +78,11 @@ class Team
     return team_data.map {|team| Team.new(team)}
   end
 
+  def matches()
+    sql = "SELECT * FROM matches where id = $1"
+    values = [@id]
+    matches = SqlRunner.run(sql, values)
+    return matches.map{|match| Match.new(match)}
+  end
+
 end
