@@ -7,12 +7,20 @@ body {
   color: white;
 }
 
+@media all and ( min-width: 480px ) {
+
+  .grid-row-sm {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+}
+
 .title {
   text-align: center;
   text-decoration: underline;
   font-family: monospace;
-  font-size: 50px;
-
+  font-size: 45px;
 }
 
 .home {
@@ -24,6 +32,7 @@ body {
 
 .nav {
  color: white;
+ display: inline-block;
 }
 
 .nav_ul {
