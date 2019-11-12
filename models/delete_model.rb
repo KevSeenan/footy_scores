@@ -18,20 +18,17 @@ require_relative('../db/sql_runner.rb')
 
 class Delete
 
-  # def initialize()
-  # end
-  #
-  # def Delete.delete_all(table_name)
-  #   sql = "DELETE FROM #{table_name}"
-  #   SqlRunner.run(sql)
-  # end
+  def Delete.delete_all()
+    sql = "DELETE FROM #{'matches' + 'fixtures' + 'teams' + 'leagues'}"
+    SqlRunner.run(sql)
+  end
 
   # Another thought was to use TRUNCATE. This can be used to remove all data from a large
   # table but could also be used in this case to remove the duplicate code
 
-  def Delete.delete_all()
-    sql = "TRUNCATE TABLE matches, fixtures, teams, leagues"
-    SqlRunner.run(sql)
-  end
+  # def Delete.delete_all()
+  #   sql = "TRUNCATE TABLE matches, fixtures, teams, leagues"
+  #   SqlRunner.run(sql)
+  # end
 
 end
