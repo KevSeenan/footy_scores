@@ -35,10 +35,10 @@ class Match
   end
 
 #DELETE
-  def self.delete_all()
-    sql = "DELETE FROM matches"
-    SqlRunner.run(sql)
-  end
+  # def self.delete_all()
+  #   sql = "DELETE FROM matches"
+  #   SqlRunner.run(sql)
+  # end
 
 #READ
   def self.all()

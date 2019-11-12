@@ -24,10 +24,10 @@ class Team
   end
 
 #DELETE
-  def Team.delete_all()
-    sql = "DELETE FROM teams"
-    SqlRunner.run(sql)
-  end
+  # def Team.delete_all()
+  #   sql = "DELETE FROM teams"
+  #   SqlRunner.run(sql)
+  # end
 
 #READ
   def self.all()

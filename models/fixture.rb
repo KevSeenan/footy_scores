@@ -34,10 +34,10 @@ class Fixture
   end
 
 #DELETE
-  def Fixture.delete_all()
-    sql = "DELETE FROM fixtures"
-    SqlRunner.run(sql)
-  end
+  # def Fixture.delete_all()
+  #   sql = "DELETE FROM fixtures"
+  #   SqlRunner.run(sql)
+  # end
 
 #READ
   def self.all()

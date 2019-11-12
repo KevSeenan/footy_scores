@@ -3,11 +3,14 @@ require_relative('../models/match.rb')
 require_relative('../models/fixture.rb')
 require_relative('../models/team.rb')
 require_relative('../models/league.rb')
+require_relative('../models/delete_model.rb')
 
-Fixture.delete_all()
-Match.delete_all()
-Team.delete_all()
-League.delete_all()
+# Fixture.delete_all()
+# Match.delete_all()
+# Team.delete_all()
+# League.delete_all()
+
+Delete.delete_all()
 
 
 league1 = League.new(
