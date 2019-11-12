@@ -22,10 +22,10 @@ class League
   end
 
 # DELETE
-  def League.delete_all()
-    sql = "DELETE FROM leagues"
-    SqlRunner.run(sql)
-  end
+  # def League.delete_all()
+  #   sql = "DELETE FROM leagues"
+  #   SqlRunner.run(sql)
+  # end
 
 #READ
   def self.all()
